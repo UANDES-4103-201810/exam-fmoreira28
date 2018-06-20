@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shops</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Pizza</th>
+    <th>Price</th>
+
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @myshops.each do |shop| %>
+    <tr>
+      <td><%= Recipe.find(shop.pizza_id).name%></td>
+      <td><%= Recipe.find(shop.pizza_id).price %></td>
+      <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

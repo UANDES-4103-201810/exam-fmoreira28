@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ExamFmoreira28</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <%= link_to "Home",root_path%>
+  <%= link_to "Order Pizza",pizzas_path%>
+  <%= link_to "Recipes",recipes_path%>
+
+
+  <% if user_signed_in? %>
+    <a href="/myshops">My Orders</a>
+    <%= link_to current_user.email, edit_user_registration_path %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+
+  <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </body>
+</html>

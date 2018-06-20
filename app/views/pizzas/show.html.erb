@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= Recipe.find(@pizza.recipe_id).name %>
+<p>
+<p>
+  <strong>Ingredients:</strong>
+  <%= Recipe.find(@pizza.recipe_id).ingre1 %>
+  <%= Recipe.find(@pizza.recipe_id).ingre2 %>
+</p>
+
+<p>
+  <strong>Crust:</strong>
+  <%= @pizza.crust %>
+</p>
+
+<%= link_to 'Add to my orders',new_shop_path(:pizza_id => @pizza.id,:user_id => current_user.id)%>
+
+<%= link_to 'Back', pizzas_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pizzas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Crust</th>
+      <th>Price</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pizzas.each do |pizza| %>
+      <tr>
+        <td><%= Recipe.find(pizza.recipe_id).name %></td>
+        <td><%= pizza.crust %></td>
+        <td><%= Recipe.find(pizza.recipe_id).price %></td>
+        <td><%= link_to 'Show', pizza %></td>
+       <!-- <td><%= link_to 'Edit', edit_pizza_path(pizza) %></td>
+        <td><%= link_to 'Destroy', pizza, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
