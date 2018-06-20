@@ -22,4 +22,4 @@ Pizza.create(recipe_id:3,crust:"Delgada")
 Pizza.create(recipe_id:4,crust:"Delgada")
 Pizza.create(recipe_id:5,crust:"Delgada")
 
-
+User.create(email:"user@user.com",password:"123456",password_confirmation:"123456")
